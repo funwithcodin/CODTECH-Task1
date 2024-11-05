@@ -56,3 +56,4 @@ Termination: The loop can terminate based on user input, and resources are freed
 
 Conclusion:
 The Basic Calculator project serves as an excellent introductory exercise for understanding user input handling, control flow, and basic arithmetic operations in Java. It provides a solid foundation for further enhancements, such as supporting more advanced operations or developing a graphical user interface (GUI) in future iterations.
+![Command Prompt 05-11-2024 22_59_11](https://github.com/user-attachments/assets/34f75178-f22c-4b80-875a-b82d1c9b110e)

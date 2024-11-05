@@ -1,0 +1,80 @@
+/* The Basic Calculator program is a simple command-line application that allows users to perform basic arithmetic operations, 
+   including addition, subtraction, multiplication, and division, on two integers. 
+   The program prompts the user to input two numbers and offers a menu of operations to choose from. After executing the selected operation, 
+   it displays the result.*/
+
+import java.util.Scanner;
+
+public class BasicCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter two numbers
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+        
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+
+        int cont = 1;
+
+        while(cont == 1) {
+            // Prompt user to choose an operation
+            System.out.println("Choose an operation: ");
+            System.out.println("1. Addition (+)");
+            System.out.println("2. Subtraction (-)");
+            System.out.println("3. Multiplication (*)");
+            System.out.println("4. Division (/)");
+            System.out.print("Enter your choice (1/2/3/4): ");
+            int choice = scanner.nextInt();
+
+            int result = 0;
+
+            // Perform the selected operation
+            switch (choice) {
+                case 1:
+                    result = num1 + num2;
+                    System.out.println("Result: " + num1 + " + " + num2 + " = " + result);
+                    break;
+                case 2:
+                    result = num1 - num2;
+                    System.out.println("Result: " + num1 + " - " + num2 + " = " + result);
+                    break;
+                case 3:
+                    result = num1 * num2;
+                    System.out.println("Result: " + num1 + " * " + num2 + " = " + result);
+                    break;
+                case 4:
+                    if (num2 != 0) {
+                        double result1 = (double)num1 / (double)num2;
+                        System.out.println("Result: " + num1 + " / " + num2 + " = " + result1);
+                    } else {
+                        System.out.println("Error: Division by zero is not allowed.");
+                    }
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please select a valid operation.");
+            } // switch block
+
+            System.out.println("Do you want to perform more operations? Yes: 1, No: 0");
+            cont = scanner.nextInt();
+
+            if(cont == 1) {
+                System.out.println("Do you want to change the numbers? Yes: 1, No: 0");
+                int change = scanner.nextInt();
+                if(change == 1) {
+                    // Prompt user to enter two numbers
+                    System.out.print("Enter the first number: ");
+                    num1 = scanner.nextInt();
+                    
+                    System.out.print("Enter the second number: ");
+                    num2 = scanner.nextInt();
+                }
+            }
+        } // while block
+
+        System.out.println("Calculation complete.");
+
+        scanner.close();
+    }
+}
